@@ -1,0 +1,58 @@
+$btn-heights: (
+    "sm": 24px,
+    "md": 36px,
+    "lg": 48px,
+);
+
+$btn-color: (
+    "success": rgb(4, 211, 4),
+    "info": rgb(0, 179, 255),
+    "danger": red,
+);
+
+$btn-radius: (
+    "sm": 3px,
+    "md": 6px,
+    "lg": 12px,
+);
+
+// @mixin btn-classes-add($size) {
+//     @if $size == "sm"
+// }
+
+@mixin generate-btn-classes {
+    @each $val, $height in $btn-heights {
+        .btn-#{$val} {
+            height: $height;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+}
+@mixin generate-btn-radius-classes {
+    @each $val, $radius in $btn-radius {
+        .btn-radius-#{$val} {
+            border-radius: $radius
+        }
+    }
+}
+@mixin generate-btn-color-classes {
+    @each $val, $color in $btn-color {
+        .btn-#{$val} {
+            background-color: $color
+        }
+    }
+}
+
+@include generate-btn-classes;
+@include generate-btn-radius-classes;
+
+.btn{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: grey;
+    border: 0px;
+    box-shadow: 0px 0px 0px 0px;
+    cursor: pointer;
+    color: white;
+}
+@include generate-btn-color-classes;

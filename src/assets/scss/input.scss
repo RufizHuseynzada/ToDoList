@@ -1,0 +1,61 @@
+$input-heights: (
+    "sm": 24px,
+    "md": 36px,
+    "lg": 48px,
+);
+
+$input-radius: (
+    "sm": 3px,
+    "md": 6px,
+    "lg": 12px,
+);
+
+@mixin generate-input-classes {
+    @each $val, $height in $input-heights {
+        .input-#{$val} {
+            height: $height;
+        }
+    }
+}
+
+@mixin generate-input-radius-classes {
+    @each $val, $radius in $input-radius {
+        .input-radius-#{$val} {
+            border-radius: $radius
+        }
+    }
+}
+
+@include generate-input-classes;
+@include generate-input-radius-classes;
+
+input {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(214, 214, 214);
+    height: map-get($input-heights, "md");
+    padding: 0px 10px 0px 10px;
+    border-radius: map-get($input-radius, "md");
+    border: 0px;
+    width: 100%;
+}
+
+.input-checkbox {
+    height: map-get($input-heights, "sm");
+    padding: 0px;
+    margin: 24px 0px 0px 0px;
+}
+
+select {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(214, 214, 214);
+    height: map-get($input-heights, "md");
+    padding: 0px 10px 0px 10px;
+    border-radius: map-get($input-radius, "md");
+    border: 0px;
+    width: 100%;
+
+    option {
+        margin-top: 100px;
+        border: 10px solid aqua;
+    }
+}

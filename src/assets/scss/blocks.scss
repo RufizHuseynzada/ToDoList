@@ -1,0 +1,113 @@
+@mixin generate-mt-classes() {
+  @for $i from 1 through 5 {
+    .mt-#{$i} {
+      margin-top: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-mb-classes() {
+  @for $i from 1 through 5 {
+    .mb-#{$i} {
+      margin-bottom: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-ml-classes() {
+  @for $i from 1 through 5 {
+    .ml-#{$i} {
+      margin-left: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-mr-classes() {
+  @for $i from 1 through 5 {
+    .mr-#{$i} {
+      margin-right: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-ma-classes() {
+  @for $i from 1 through 5 {
+    .ma-#{$i} {
+      margin: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-pt-classes() {
+  @for $i from 1 through 5 {
+    .pt-#{$i} {
+      padding-top: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-pb-classes() {
+  @for $i from 1 through 5 {
+    .pb-#{$i} {
+      padding-bottom: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-pl-classes() {
+  @for $i from 1 through 5 {
+    .pl-#{$i} {
+      padding-left: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-pr-classes() {
+  @for $i from 1 through 5 {
+    .pr-#{$i} {
+      padding-right: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-pa-classes() {
+  @for $i from 1 through 5 {
+    .pa-#{$i} {
+      padding: $i * 8px;
+    }
+  }
+}
+
+@mixin generate-col-sm-classes() {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      width: calc(100% * $i/12);
+      text-align: start;
+      background-color: transparent;
+
+    }
+  }
+}
+
+
+
+@include generate-ma-classes;
+@include generate-mb-classes;
+@include generate-ml-classes;
+@include generate-mr-classes;
+@include generate-mt-classes;
+
+@include generate-pa-classes;
+@include generate-pb-classes;
+@include generate-pl-classes;
+@include generate-pr-classes;
+@include generate-pt-classes;
+
+.row {
+  display: flex;
+  margin: 0px 0px 10px 0px;
+  gap: 30px;
+  justify-content: flex-start;
+  background-color: transparent;
+  @include generate-col-sm-classes;
+}
